@@ -137,22 +137,10 @@ export default function Header() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <Link
-                    href="/signup"
-                    className="align-items-center btn cart-button d-none d-xl-flex ms-2 ms-lg-0"
-                  >
-                    <span className="ms-2 text-[#1f5453] text-md">
-                      Register
-                    </span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
                     href="/signin"
                     className="align-items-center btn cart-button d-none d-xl-flex ms-2 ms-lg-0"
                   >
-                    <span className="ms-2 text-[#1f5453] text-md">
-                      Sign In
-                    </span>
+                    <span className="ms-2 text-[#1f5453] text-md">Sign In</span>
                   </Link>
                 </li>
                 {/* <li className="nav-item dropdown">

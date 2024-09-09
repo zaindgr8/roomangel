@@ -5,27 +5,39 @@ import React, { useState } from "react";
 const initialReviewsData = [
   {
     id: 1,
-    review: "Review 1",
-    value1: "Value 2",
-    value2: "Value 2",
-    text: "Review Text 1",
-    details: "This is the full detailed description of Review 1.",
+    score: 4.5,
+    guestName: "John Doe",
+    dateOfStay: "2023-07-15",
+    nights: 3,
+    reservationNumber: "12345",
+    roomType: "Suite",
+    roomNumber: "101",
+    description: "Amazing experience, will come again!",
+    text: "The staff was very friendly, and the room was spacious and clean. Highly recommend this place!",
   },
   {
     id: 2,
-    review: "Review 2",
-    value1: "Value 5",
-    value2: "Value 5",
-    text: "Review Text 2",
-    details: "This is the full detailed description of Review 2.",
+    score: 3.0,
+    guestName: "Jane Smith",
+    dateOfStay: "2023-08-02",
+    nights: 2,
+    reservationNumber: "12346",
+    roomType: "Standard",
+    roomNumber: "202",
+    description: "Good stay, but could improve cleanliness.",
+    text: "The hotel was in a great location, but the room wasn't cleaned properly. Other than that, the stay was comfortable.",
   },
   {
     id: 3,
-    review: "Review 3",
-    value1: "Value 8",
-    value2: "Value 8",
-    text: "Review Text 3",
-    details: "This is the full detailed description of Review 3.",
+    score: 5.0,
+    guestName: "Alex Johnson",
+    dateOfStay: "2023-06-25",
+    nights: 5,
+    reservationNumber: "12347",
+    roomType: "Deluxe",
+    roomNumber: "303",
+    description: "Fantastic stay, exceeded expectations!",
+    text: "Everything was perfect, from check-in to the amenities. Highly recommend the deluxe room for an amazing experience.",
   },
 ];
 
@@ -35,27 +47,18 @@ export default function ReviewPage() {
 
   // Handle review click
   const handleClick = (review) => {
-    // Update the reviews data to set value2 as "Highlighted review"
-    const updatedReviews = reviewsData.map((r) => {
-      if (r.id === review.id) {
-        return { ...r, value2: "Highlighted review" }; // Set value2 to "Highlighted review"
-      }
-      return r;
-    });
-
-    setReviewsData(updatedReviews); // Update the reviewsData state
-    setHighlightedReview(review); // Set the clicked review as the highlighted review
+    setHighlightedReview(review);
   };
 
   return (
-    <div className="min-h-screen flex mt-20 mb-4 mx-2  border-[#1f5453] border-2 rounded-xl md:m-8 sm:m-2 flex-col p-2">
+    <div className="min-h-screen flex mt-20 mb-4 mx-2 border-[#1f5453] border-2 rounded-xl md:m-8 sm:m-2 flex-col p-2">
       {/* Review List */}
-      <div className=" border-[#1f5453] p-1 border-2 rounded-lg mb-4">
+      <div className="border-[#1f5453] p-1 border-2 rounded-lg mb-4">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-100">
             <tr>
               <th className="p-2 text-left text-xs font-medium text-gray-500 uppercase">
-                Review
+                Guest Name
               </th>
               <th className="p-2 text-left text-xs font-medium text-gray-500 uppercase">
                 Value 1
@@ -73,13 +76,15 @@ export default function ReviewPage() {
               <tr
                 key={review.id}
                 className={`cursor-pointer ${
-                  highlightedReview?.id === review.id ? "bg-yellow-200" : ""
+                  highlightedReview?.id === review.id
+                    ? "bg-[#1f5453] text-white"
+                    : ""
                 }`}
                 onClick={() => handleClick(review)}
               >
-                <td className="p-2">{review.review}</td>
-                <td className="p-2">{review.value1}</td>
-                <td className="p-2">{review.value2}</td>
+                <td className="p-2">{review.guestName}</td>
+                <td className="p-2">{review.score}</td>
+                <td className="p-2">{review.nights}</td>
                 <td className="p-2">{review.text}</td>
               </tr>
             ))}
@@ -91,11 +96,48 @@ export default function ReviewPage() {
       {highlightedReview && (
         <div className="grid grid-cols-2 gap-4 mt-3">
           {/* Full Details Section */}
-          <div className=" border-[#1f5453] rounded-lg border-2 bg-yellow-100 p-4">
-            <h3 className="font-semibold">
-              Full Details of Highlighted Review
-            </h3>
-            <p>{highlightedReview.details}</p> {/* Show full details */}
+          <div className="border-[#1f5453] bg-[#f8f9fa] rounded-lg border-2 p-4">
+            <h3 className="font-semibold">Review Details</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p>
+                  <strong>Review Score:</strong> {highlightedReview.score}
+                </p>
+                <p>
+                  <strong>Guest Name:</strong> {highlightedReview.guestName}
+                </p>
+                <p>
+                  <strong>Date of Stay:</strong> {highlightedReview.dateOfStay}
+                </p>
+                <p>
+                  <strong># of Nights:</strong> {highlightedReview.nights}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <strong>Reservation #:</strong>{" "}
+                  {highlightedReview.reservationNumber}
+                </p>
+                <p>
+                  <strong>Room Type:</strong> {highlightedReview.roomType}
+                </p>
+                <p>
+                  <strong>Room #:</strong> {highlightedReview.roomNumber}
+                </p>
+              </div>
+            </div>
+            <div className="mt-4">
+              <p>
+                <strong>Description:</strong>
+              </p>
+              <p>{highlightedReview.description}</p>
+            </div>
+            <div className="mt-4">
+              <p>
+                <strong>Review Text:</strong>
+              </p>
+              <p>{highlightedReview.text}</p>
+            </div>
           </div>
 
           {/* Reply Section */}

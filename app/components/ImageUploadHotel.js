@@ -62,7 +62,7 @@ export default function ImageUploadComponent() {
 
   return (
     <div
-      className="p-6 bg-white rounded-lg shadow-md mt-10 md:m-20 border-[#1f5453] border-2"
+      className="p-6 bg-white rounded-lg shadow-md  m-4 border-[#1f5453] border-2"
       onDrop={handleDrop}
       onDragOver={(e) => e.preventDefault()}
     >

@@ -33,31 +33,31 @@ export default function Footer() {
                 </Link>
                 <Link className="email-link d-block fw-medium" href="#">
                   <i className="fa-solid fa-envelope me-2"></i>
-                  <span>support@roomangle.com</span>
+                  <span>info@roomangel.org</span>
                 </Link>
               </div>
             </div>
             <div className="col-6 col-sm-6 col-md-6 col-lg-auto col-xl-2 py-3 py-md-5">
               <h3 className="fs-20 fw-semibold link-title mb-3 position-relative">
-                Main Hotels
+                About
               </h3>
               {/* /Start Footer Link  */}
               <ul className="footer-link list-unstyled menu mb-0">
                 <li className="mb-2">
                   <Link href="/" className="link d-block">
-                    Hotel One
+                    Room Angel App
                   </Link>
                 </li>
 
                 <li className="mb-2">
                   <Link href="#" className="link d-block">
-                    Hotel Two
+                    Room Angel Foundation
                   </Link>
                 </li>
 
                 <li className="mb-2">
                   <Link href="#" className="link d-block">
-                    Hotel Three
+                    Register
                   </Link>
                 </li>
               </ul>
@@ -71,17 +71,12 @@ export default function Footer() {
               <ul className="footer-link list-unstyled menu mb-0">
                 <li className="mb-2">
                   <Link href="#" className="link d-block">
-                    Link One
+                    Contact Us
                   </Link>
                 </li>
                 <li className="mb-2">
                   <Link href="#" className="link d-block">
-                    Link Two
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link href="#" className="link d-block">
-                    Link Three
+                    Support
                   </Link>
                 </li>
               </ul>
@@ -100,22 +95,15 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    target="_blank"
-                    href="https://www.instagram.com/"
-                  >
+                  <Link target="_blank" href="https://www.instagram.com/">
                     <BiLogoInstagramAlt className="w-[4vh] h-[4vh] ms-4" />
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    target="_blank"
-                    href="https://www.linkedin.com/in/"
-                  >
+                  <Link target="_blank" href="https://www.linkedin.com/in/">
                     <FaLinkedin className="w-[4vh] h-[4vh] ms-4" />
                   </Link>
                 </li>
-            
               </ul>
               {/* /.End Social Icon */}
             </div>
