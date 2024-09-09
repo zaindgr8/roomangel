@@ -12,7 +12,7 @@ export default function Home() {
       <div className="flex pt-20 justify-evenly items-center">
         <button
           className={`px-4 py-2 text-white rounded-md ${
-            step === 1 ? "bg-blue-500" : "bg-gray-400"
+            step === 1 ? "btn btn-primary btn-lg " : "bg-gray-400"
           }`}
           onClick={() => setStep(1)}
         >
@@ -20,7 +20,7 @@ export default function Home() {
         </button>
         <button
           className={`px-4 py-2 text-white rounded-md ${
-            step === 2 ? "bg-blue-500" : "bg-gray-400"
+            step === 2 ? "btn btn-primary btn-lg " : "bg-gray-400"
           }`}
           onClick={() => setStep(2)}
         >
