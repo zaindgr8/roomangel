@@ -74,7 +74,9 @@ export default function ImageUploadRoom() {
           <div
             key={index}
             className={`relative border-2 rounded-md ${
-              highlightedIndex === index ? "border-red-500" : "border-gray-300"
+              highlightedIndex === index
+                ? "btn btn-primary btn-lg"
+                : "border-[#1f5453]"
             }`}
             onClick={() => setHighlightedIndex(index)}
           >
@@ -88,7 +90,7 @@ export default function ImageUploadRoom() {
 
         {/* Add image placeholder */}
         <div
-          className="flex items-center justify-center border-dashed border-2 border-gray-300 rounded-md cursor-pointer"
+          className="flex items-center justify-center border-dashed border-2 border-[#1f5453] rounded-md cursor-pointer"
           onClick={triggerFileInput}
         >
           <input
@@ -97,7 +99,7 @@ export default function ImageUploadRoom() {
             ref={fileInputRef}
             onChange={handleInputChange}
           />
-          <span className="text-gray-500">Add Image</span>
+          <span className="border-[#1f5453]">Add Image</span>
         </div>
       </div>
 
