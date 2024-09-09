@@ -97,51 +97,95 @@ export default function ReviewPage() {
         <div className="grid grid-cols-2 gap-4 mt-3">
           {/* Full Details Section */}
           <div className="border-[#1f5453] bg-[#f8f9fa] rounded-lg border-2 p-4">
-            <h3 className="font-semibold">Review Details</h3>
+            <h3 className="font-semibold mb-4">Review Details</h3>
+
             <div className="grid grid-cols-2 gap-4">
-              <div>
-                <p>
-                  <strong>Review Score:</strong> {highlightedReview.score}
-                </p>
-                <p>
-                  <strong>Guest Name:</strong> {highlightedReview.guestName}
-                </p>
-                <p>
-                  <strong>Date of Stay:</strong> {highlightedReview.dateOfStay}
-                </p>
-                <p>
-                  <strong># of Nights:</strong> {highlightedReview.nights}
-                </p>
+              <div className="flex flex-col">
+                <label className="font-semibold mb-1">Review Score</label>
+                <input
+                  type="text"
+                  value={highlightedReview.score}
+                  className="border p-2 rounded-md"
+                  readOnly
+                />
               </div>
-              <div>
-                <p>
-                  <strong>Reservation #:</strong>{" "}
-                  {highlightedReview.reservationNumber}
-                </p>
-                <p>
-                  <strong>Room Type:</strong> {highlightedReview.roomType}
-                </p>
-                <p>
-                  <strong>Room #:</strong> {highlightedReview.roomNumber}
-                </p>
+              <div className="flex flex-col">
+                <label className="font-semibold mb-1">Guest Name</label>
+                <input
+                  type="text"
+                  value={highlightedReview.guestName}
+                  className="border p-2 rounded-md"
+                  readOnly
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-semibold mb-1">Date of Stay</label>
+                <input
+                  type="text"
+                  value={highlightedReview.dateOfStay}
+                  className="border p-2 rounded-md"
+                  readOnly
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-semibold mb-1"># of Nights</label>
+                <input
+                  type="text"
+                  value={highlightedReview.nights}
+                  className="border p-2 rounded-md"
+                  readOnly
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-semibold mb-1">Reservation #</label>
+                <input
+                  type="text"
+                  value={highlightedReview.reservationNumber}
+                  className="border p-2 rounded-md"
+                  readOnly
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-semibold mb-1">Room Type</label>
+                <input
+                  type="text"
+                  value={highlightedReview.roomType}
+                  className="border p-2 rounded-md"
+                  readOnly
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-semibold mb-1">Room #</label>
+                <input
+                  type="text"
+                  value={highlightedReview.roomNumber}
+                  className="border p-2 rounded-md"
+                  readOnly
+                />
               </div>
             </div>
+
             <div className="mt-4">
-              <p>
-                <strong>Description:</strong>
-              </p>
-              <p>{highlightedReview.description}</p>
+              <label className="font-semibold mb-1">Review Highlight</label>
+              <textarea
+                className="w-full border rounded-md p-2"
+                value={highlightedReview.description}
+                readOnly
+              ></textarea>
             </div>
+
             <div className="mt-4">
-              <p>
-                <strong>Review Text:</strong>
-              </p>
-              <p>{highlightedReview.text}</p>
+              <label className="font-semibold mb-1">Description</label>
+              <textarea
+                className="w-full border rounded-md p-2"
+                value={highlightedReview.text}
+                readOnly
+              ></textarea>
             </div>
           </div>
 
           {/* Reply Section */}
-          <div className="p-2 border-[#1f5453] rounded-lg border-2  md:p-4">
+          <div className="p-2 border-[#1f5453] rounded-lg border-2 md:p-4">
             <h3 className="p-2 md:font-semibold">
               Reply to Highlighted Review
             </h3>
