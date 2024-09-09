@@ -8,35 +8,59 @@ export default function FormComponent({ onNext }) {
       <form>
         <div className="mb-4">
           <label className="block text-gray-700">Hotel Name</label>
-          <input type="text" className="mt-1 p-2 w-full border rounded-md" />
+          <input
+            type="text"
+            className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
+          />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Location/Address</label>
-          <input type="text" className="mt-1 p-2 w-full border rounded-md" />
+          <input
+            type="text"
+            className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
+          />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Star Rating</label>
-          <input type="text" className="mt-1 p-2 w-full border rounded-md" />
+          <input
+            type="text"
+            className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
+          />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Facilities</label>
-          <input type="text" className="mt-1 p-2 w-full border rounded-md" />
+          <input
+            type="text"
+            className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
+          />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Check-in/Check-out Time</label>
-          <input type="text" className="mt-1 p-2 w-full border rounded-md" />
+          <input
+            type="text"
+            className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
+          />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Number of Rooms</label>
-          <input type="text" className="mt-1 p-2 w-full border rounded-md" />
+          <input
+            type="text"
+            className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
+          />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Contact Information</label>
-          <input type="text" className="mt-1 p-2 w-full border rounded-md" />
+          <input
+            type="text"
+            className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
+          />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Hotel Description</label>
-          <input type="text" className="mt-1 p-2 w-full border rounded-md" />
+          <input
+            type="text"
+            className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
+          />
         </div>
         <button type="submit" className="btn btn-primary btn-lg w-100">
           Submit

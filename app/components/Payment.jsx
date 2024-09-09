@@ -6,7 +6,7 @@ export default function Payment({ onNext }) {
 
   return (
     <div className="text-center space-y-4">
-      <p>Go to Stripe and pay some cash</p>
+      <p>Go to Stripe and pay Amount cash</p>
       <button
         onClick={handleStripePayment}
         className="btn btn-primary btn-lg w-100"
