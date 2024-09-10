@@ -87,14 +87,14 @@ export default function ImageUploadRoom() {
       <h2 className="text-xl font-semibold mb-4">Image Upload Section</h2>
 
       {/* Image grid */}
-      <div className="grid grid-cols-3 gap-4 overflow-auto h-96">
+      <div className="grid md:grid-cols-3 gap-4 overflow-auto h-96">
         {images.map((image, index) => (
           <div
             key={index}
             className={`relative border-2 rounded-md ${
               highlightedIndex === index
                 ? "btn btn-primary btn-lg"
-                : "border-[#1f5453]"
+                : "border-[#1f5453]  md:px-4 p-2.5 md:py-2"
             }`}
             onClick={() => setHighlightedIndex(index)}
           >
@@ -117,7 +117,9 @@ export default function ImageUploadRoom() {
             ref={fileInputRef}
             onChange={handleInputChange}
           />
-          <span className="border-[#1f5453]">Add Image</span>
+          <span className="border-[#1f5453]  md:px-4 p-2.5 md:py-2">
+            Add Image
+          </span>
         </div>
       </div>
 
@@ -125,7 +127,7 @@ export default function ImageUploadRoom() {
       <div className="mt-6 flex justify-between">
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn  md:px-4 p-2.5 md:py-2 btn-primary"
           onClick={triggerFileInput}
         >
           Add Image
@@ -133,7 +135,7 @@ export default function ImageUploadRoom() {
 
         <button
           type="button"
-          className={`btn btn-danger ${
+          className={`btn  md:px-4 p-2.5 md:py-2 btn-danger ${
             highlightedIndex === null ? "opacity-50 cursor-not-allowed" : ""
           }`}
           onClick={removeImage}
