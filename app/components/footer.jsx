@@ -82,31 +82,6 @@ export default function Footer() {
               </ul>
               {/* /.End Footer Link  */}
             </div>
-
-            <div className="col-6 col-sm-4 col-md-4 col-lg col-xl-2 py-3 py-md-5">
-              <h3 className="fs-20 fw-semibold link-title mb-3 position-relative">
-                Connect with us
-              </h3>
-              {/* /Start Social Icon */}
-              <ul className="list-unstyled social-icon">
-                <li>
-                  <Link target="_blank" href="https://www.facebook.com/">
-                    <PiFacebookLogoFill className="w-[4vh] h-[4vh] ms-4" />
-                  </Link>
-                </li>
-                <li>
-                  <Link target="_blank" href="https://www.instagram.com/">
-                    <BiLogoInstagramAlt className="w-[4vh] h-[4vh] ms-4" />
-                  </Link>
-                </li>
-                <li>
-                  <Link target="_blank" href="https://www.linkedin.com/in/">
-                    <FaLinkedin className="w-[4vh] h-[4vh] ms-4" />
-                  </Link>
-                </li>
-              </ul>
-              {/* /.End Social Icon */}
-            </div>
           </div>
           <hr className="mb-0 mt-4" />
           <div className="py-4">
