@@ -1,8 +1,26 @@
 "use client";
 import React, { useState } from "react";
+import one from "../../public/room/pexels-digitalbuggu-172872.jpg";
+import two from "../../public/room/pexels-enginakyurt-1579253.jpg";
+import three from "../../public/room/pexels-fotoaibe-1743231.jpg";
+import four from "../../public/room/pexels-pixabay-164595.jpg";
+import five from "../../public/room/pexels-pixabay-237371.jpg";
+import six from "../../public/room/pexels-pixabay-262048.jpg";
+import seven from "../../public/room/pexels-pixabay-271624.jpg";
+import eight from "../../public/room/pexels-pixabay-271639.jpg";
 
 export default function ImageUploadRoom() {
-  const [images, setImages] = useState([]);
+  // Pre-load the predefined images in the initial state
+  const [images, setImages] = useState([
+    { src: one.src, name: "pexels-digitalbuggu-172872" },
+    { src: two.src, name: "pexels-enginakyurt-1579253" },
+    { src: three.src, name: "pexels-fotoaibe-1743231" },
+    { src: four.src, name: "pexels-pixabay-164595" },
+    { src: five.src, name: "pexels-pixabay-237371" },
+    { src: six.src, name: "pexels-pixabay-262048" },
+    { src: seven.src, name: "pexels-pixabay-271624" },
+    { src: eight.src, name: "pexels-pixabay-271639" },
+  ]);
   const [highlightedIndex, setHighlightedIndex] = useState(null);
   const fileInputRef = React.useRef(null);
 
@@ -54,9 +72,9 @@ export default function ImageUploadRoom() {
   const removeImage = () => {
     if (highlightedIndex !== null) {
       const updatedImages = [...images];
-      updatedImages.splice(highlightedIndex, 1); // Move to deleted folder logic goes here
+      updatedImages.splice(highlightedIndex, 1); // Remove the image at the highlighted index
       setImages(updatedImages);
-      setHighlightedIndex(null);
+      setHighlightedIndex(null); // Reset highlighted index after removal
     }
   };
 
@@ -83,7 +101,7 @@ export default function ImageUploadRoom() {
             <img
               src={image.src}
               alt={`Uploaded ${image.name}`}
-              className="w-full h-32 object-cover rounded-md"
+              className="w-full h-full object-cover rounded-md"
             />
           </div>
         ))}

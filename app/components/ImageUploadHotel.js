@@ -1,8 +1,26 @@
 "use client";
 import React, { useState } from "react";
+import one from "../../public/pexels-kamenczak-775219.jpg";
+import two from "../../public/pexels-pixabay-164595.jpg";
+import three from "../../public/pexels-pixabay-262047.jpg";
+import four from "../../public/pexels-pixabay-262047.jpg";
+import five from "../../public/pexels-pixabay-53577.jpg";
+import six from "../../public/pexels-thorsten-technoman-109353-338504.jpg";
+import seven from "../../public/pexels-pixabay-271639.jpg";
+import eight from "../../public/pexels-donaldtong94-189333.jpg";
 
 export default function ImageUploadComponent() {
-  const [images, setImages] = useState([]);
+  // Pre-load the predefined images in the initial state
+  const [images, setImages] = useState([
+    { src: one.src, name: "pexels-kamenczak" },
+    { src: two.src, name: "pexels-pixabay-164595" },
+    { src: three.src, name: "pexels-pixabay-262047" },
+    { src: four.src, name: "pexels-pixabay-262047" },
+    { src: five.src, name: "pexels-pixabay-53577" },
+    { src: six.src, name: "pexels-thorsten-technoman-109353" },
+    { src: seven.src, name: "pexels-pixabay-271639" },
+    { src: eight.src, name: "pexels-donaldtong94-189333" },
+  ]);
   const [highlightedIndex, setHighlightedIndex] = useState(null);
   const fileInputRef = React.useRef(null);
 
@@ -54,7 +72,7 @@ export default function ImageUploadComponent() {
   const removeImage = () => {
     if (highlightedIndex !== null) {
       const updatedImages = [...images];
-      updatedImages.splice(highlightedIndex, 1); // Move to deleted folder logic goes here
+      updatedImages.splice(highlightedIndex, 1);
       setImages(updatedImages);
       setHighlightedIndex(null);
     }
@@ -83,7 +101,7 @@ export default function ImageUploadComponent() {
             <img
               src={image.src}
               alt={`Uploaded ${image.name}`}
-              className="w-full h-32 object-cover rounded-md"
+              className="w-full h-full object-cover rounded-md"
             />
           </div>
         ))}

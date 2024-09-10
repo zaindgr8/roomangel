@@ -2,9 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { PiFacebookLogoFill } from "react-icons/pi";
-import { BiLogoInstagramAlt } from "react-icons/bi";
-import { FaLinkedin } from "react-icons/fa6";
+
 import Image from "next/image";
 const links = [
   { href: "/", text: "Home 1" },
@@ -70,17 +68,6 @@ export default function Header() {
                   alt=""
                 />
                 <p className="">!</p>
-              </Link>
-            </div>
-            <div className="col-md-8 col-lg-9 col-xl-8 d-flex justify-content-end align-items-center">
-              <Link target="_blank" href="https://www.facebook.com/">
-                <PiFacebookLogoFill className="w-[4vh] h-[4vh] ms-4" />
-              </Link>
-              <Link target="_blank" href="https://www.instagram.com/">
-                <BiLogoInstagramAlt className="w-[4vh] h-[4vh] ms-4" />
-              </Link>
-              <Link target="_blank" href="https://www.linkedin.com/in/">
-                <FaLinkedin className="w-[4vh] h-[4vh] ms-4" />
               </Link>
             </div>
           </div>
