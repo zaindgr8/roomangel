@@ -31,7 +31,7 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/Booking" className="block py-2 px-4  rounded-md">
+            <Link href="/dashboard" className="block py-2 px-4  rounded-md">
               Booking History
             </Link>
           </li>
