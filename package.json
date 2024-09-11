@@ -30,7 +30,6 @@
     "react-sticky-box": "^2.0.4"
   },
   "devDependencies": {
-    "@types/node": "^22.5.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.51.0",
     "eslint-config-next": "13.5.4",

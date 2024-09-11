@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
-export default function page({ onNext }) {
+
+export default function Page({ onNext }) {
   const [email, setEmail] = useState("");
-  const [token, setToken] = useState("");
+  const [Password, sePassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Mock validation success
-    onNext({ email, token });
+    onNext({ email, Password });
   };
 
   return (
@@ -29,12 +30,12 @@ export default function page({ onNext }) {
 
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              password
+              Password
             </label>
             <input
-              type="text"
+              type="password"
               className="w-full p-2 border border-gray-300 rounded-md"
-              value={token}
+              value={Password}
               onChange={(e) => setToken(e.target.value)}
               required
             />
@@ -44,15 +45,11 @@ export default function page({ onNext }) {
               Forgot Password
             </label>
             <input
-              type="text"
+              type="password"
               className="w-full p-2 border border-gray-300 rounded-md"
-              value={token}
-              onChange={(e) => setToken(e.target.value)}
-              required
             />
           </div>
-
-          <button type="submit" className="btn btn-primary btn-lg w-100">
+          <button type="submit" className="btn btn-primary btn-lg w-full">
             Login
           </button>
         </form>
