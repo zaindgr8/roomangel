@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
+import { FaStar } from "react-icons/fa"; // Importing star icon
 
 // Initial reviews data
 const initialReviewsData = [
@@ -42,6 +43,16 @@ const initialReviewsData = [
   },
 ];
 
+// Function to render stars based on rating
+const renderStars = (rating) => {
+  const stars = [];
+  const roundedRating = Math.round(rating); // Round to the nearest whole number for full stars
+  for (let i = 0; i < roundedRating; i++) {
+    stars.push(<FaStar key={i} className="text-yellow-500" />); // Render stars
+  }
+  return stars;
+};
+
 export default function ReviewPage() {
   const [reviewsData, setReviewsData] = useState(initialReviewsData);
   const [highlightedReview, setHighlightedReview] = useState(null);
@@ -64,8 +75,8 @@ export default function ReviewPage() {
                   <th className="p-2 text-left text-xs font-medium text-gray-500 uppercase">
                     Guest Name
                   </th>
-                  <th className="p-2 text-left text-xs font-medium text-gray-500 uppercase">
-                    Review Score
+                  <th className="p-2 text-left text-xs font-medium text-gray-500 uppercase whitespace-nowrap">
+                    Review Score {/* Ensures it stays on one line */}
                   </th>
                   <th className="p-2 text-left text-xs font-medium text-gray-500 uppercase">
                     Rating
@@ -88,7 +99,8 @@ export default function ReviewPage() {
                   >
                     <td className="p-2">{review.guestName}</td>
                     <td className="p-2">{review.score}</td>
-                    <td className="p-2">{review.nights}</td>
+                    <td className="p-2">{review.score}</td>{" "}
+                    {/* Removed stars here */}
                     <td className="p-2">{review.text}</td>
                   </tr>
                 ))}
@@ -166,6 +178,15 @@ export default function ReviewPage() {
                       className="border p-2 rounded-md"
                       readOnly
                     />
+                  </div>
+                  {/* Add the Rating Section Here */}
+                  <div className="flex flex-col">
+                    <label className="font-semibold mb-1">Rating</label>
+                    <div className="flex items-center space-x-2">
+                      {renderStars(highlightedReview.score)}
+                      <span>{highlightedReview.score}</span>
+                    </div>{" "}
+                    {/* Added flex here for stars and score */}
                   </div>
                 </div>
 

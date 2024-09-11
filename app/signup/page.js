@@ -5,7 +5,7 @@ import BasicDetails from "../components/BasicDetails";
 import HotelSelection from "../components/HotelSelection";
 import Payment from "../components/Payment";
 import PaymentSuccess from "../components/PaymentSuccess";
-
+import Sidebar from "../components/Sidebar";
 export default function RegistrationFlow() {
   const [currentStep, setCurrentStep] = useState(0);
   const [userData, setUserData] = useState({});
@@ -41,9 +41,12 @@ export default function RegistrationFlow() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 shadow-lg rounded-lg w-full max-w-md">
-        {renderStep()}
+    <div className="flex min-h-screen">
+      <Sidebar />
+      <div className="flex-grow flex items-center justify-center ">
+        <div className="bg-white p-8 shadow-lg rounded-lg w-full max-w-md">
+          {renderStep()}
+        </div>
       </div>
     </div>
   );
