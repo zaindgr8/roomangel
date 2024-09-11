@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Sidebar from "../components/Sidebar";
 export default function page({ onNext }) {
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
