@@ -28,8 +28,8 @@ export default function Navbar({ bookings, setFilteredBookings }) {
         onClick={handleFutureBookings}
         className={`py-2 px-4 border ${
           activeTab === "Future Bookings"
-            ? "bg-blue-500 text-white"
-            : "bg-white text-blue-500"
+            ? "bg-[#1f5453] text-white"
+            : "bg-white text-[#1f5453]"
         } rounded-md`}
       >
         Future Bookings
@@ -38,8 +38,8 @@ export default function Navbar({ bookings, setFilteredBookings }) {
         onClick={handleHistoricBookings}
         className={`py-2 px-4 border ${
           activeTab === "Historic Bookings"
-            ? "bg-blue-500 text-white"
-            : "bg-white text-blue-500"
+            ? "bg-[#1f5453] text-white"
+            : "bg-white text-[#1f5453]"
         } rounded-md`}
       >
         Historic Bookings
