@@ -67,7 +67,6 @@ export default function Header() {
                   src="/assets/img/logo/logo_white.svg"
                   alt=""
                 />
-                <p className="">!</p>
               </Link>
             </div>
           </div>
