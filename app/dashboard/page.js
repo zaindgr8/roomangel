@@ -5,7 +5,7 @@ import ChartsSection from "../components/ChartsSection";
 import TableSection from "../components/TableSection";
 import Sidebar from "../components/Sidebar";
 
-export default function Home() {
+export default function page() {
   // Initial bookings data
   const initialBookingsData = [
     {
