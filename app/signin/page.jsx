@@ -1,49 +1,62 @@
 "use client";
 import { useState } from "react";
-import TokenValidation from "../components/TokenValidation";
-import BasicDetails from "../components/BasicDetails";
-import HotelSelection from "../components/HotelSelection";
-import Payment from "../components/Payment";
-import PaymentSuccess from "../components/PaymentSuccess";
+import Sidebar from "../components/Sidebar";
+export default function page({ onNext }) {
+  const [email, setEmail] = useState("");
+  const [token, setToken] = useState("");
 
-export default function RegistrationFlow() {
-  const [currentStep, setCurrentStep] = useState(0);
-  const [userData, setUserData] = useState({});
-
-  // Go to the next step
-  const goToNextStep = (data) => {
-    setUserData({ ...userData, ...data });
-    setCurrentStep(currentStep + 1);
-  };
-
-  const goToPreviousStep = () => {
-    setCurrentStep(currentStep - 1);
-  };
-
-  // Render the steps based on the currentStep
-  const renderStep = () => {
-    switch (currentStep) {
-      case 0:
-        return <TokenValidation onNext={goToNextStep} />;
-      case 1:
-        return <BasicDetails onNext={goToNextStep} onBack={goToPreviousStep} />;
-      case 2:
-        return (
-          <HotelSelection onNext={goToNextStep} onBack={goToPreviousStep} />
-        );
-      case 3:
-        return <Payment onNext={goToNextStep} />;
-      case 4:
-        return <PaymentSuccess />;
-      default:
-        return <TokenValidation onNext={goToNextStep} />;
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Mock validation success
+    onNext({ email, token });
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 shadow-lg rounded-lg w-full max-w-md">
-        {renderStep()}
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              password
+            </label>
+            <input
+              type="text"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              value={token}
+              onChange={(e) => setToken(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Forgot Password
+            </label>
+            <input
+              type="text"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              value={token}
+              onChange={(e) => setToken(e.target.value)}
+              required
+            />
+          </div>
+
+          <button type="submit" className="btn btn-primary btn-lg w-100">
+            Login
+          </button>
+        </form>
       </div>
     </div>
   );
