@@ -57,7 +57,7 @@ export default function Header() {
     <>
       {/* Start Topbar */}
       <div className="d-none d-lg-block topbar-bg bg-[#1f5453] text-white">
-        <div className="container">
+        <div className="container pb-4">
           <div className="row align-items-center">
             <div className="col-md-4 col-lg-3 col-xl-4">
               <Link href="/" className="headerLogo">
