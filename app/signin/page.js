@@ -57,6 +57,14 @@ export default function Page({ onNext }) {
                 Forgot Password
               </Link>
             </div>
+            <div className="flex justify-center">
+              <Link
+                href={"/"}
+                className="block text-sm font-medium underline text-green-500"
+              >
+                About Room Angel
+              </Link>
+            </div>
           </form>
         </div>
       </div>

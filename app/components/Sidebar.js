@@ -40,6 +40,11 @@ const Sidebar = () => {
               Review
             </Link>
           </li>
+          <li>
+            <Link href="/" className="block py-2 px-4  rounded-md">
+              About Room Angel
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
