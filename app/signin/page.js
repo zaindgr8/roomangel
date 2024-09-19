@@ -15,8 +15,6 @@ export default function Page({ onNext }) {
 
   return (
     <div className="flex min-h-screen">
-      <Sidebar /> {/* Sidebar remains on the left */}
-      {/* Form Container */}
       <div className="flex-grow flex items-center justify-center">
         <div className="bg-white p-8 shadow-lg rounded-lg w-full max-w-md">
           <form onSubmit={handleSubmit} className="space-y-4">

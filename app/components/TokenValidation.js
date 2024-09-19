@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Link from "next/link";
 export default function TokenValidation({ onNext }) {
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
@@ -37,6 +37,14 @@ export default function TokenValidation({ onNext }) {
       <button type="submit" className="btn btn-primary btn-lg w-100">
         Register
       </button>
+      <div className="flex justify-center">
+        <Link
+          href={"/signin"}
+          className="block text-sm font-medium underline text-green-500"
+        >
+          Already a member
+        </Link>
+      </div>
     </form>
   );
 }
