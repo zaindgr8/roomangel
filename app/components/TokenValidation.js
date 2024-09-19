@@ -42,7 +42,7 @@ export default function TokenValidation({ onNext }) {
           href={"/signin"}
           className="block text-sm font-medium underline text-green-500"
         >
-          Already a member
+          Already a member Sign in
         </Link>
       </div>
     </form>
