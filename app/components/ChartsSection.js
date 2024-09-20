@@ -1,7 +1,7 @@
 import Image from "next/image";
-import room from "../../public/Room1/piaroom.png";
-import chart from "../../public/Room1/chart.png";
-import line from "../../public/Room1/line.png";
+import room from "../../public/Room1/Pie.png";
+import chart from "../../public/Room1/bar.png";
+import line from "../../public/Room1/stacked.png";
 export default function ChartsSection() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white rounded-lg shadow-md m-4 border-[#1f5453] border-2 p-2">
@@ -10,8 +10,8 @@ export default function ChartsSection() {
         <Image
           src={room}
           alt="Room Type Chart"
-          width={200}
-          height={200}
+          width={250}
+          height={250}
           className=" mx-2"
         />
       </div>
@@ -20,8 +20,8 @@ export default function ChartsSection() {
         <Image
           src={chart}
           alt="Expected vs Actual Chart"
-          width={200}
-          height={200}
+          width={250}
+          height={250}
           className="mx-4"
         />
       </div>
@@ -30,8 +30,8 @@ export default function ChartsSection() {
         <Image
           src={line}
           alt="Month on Month Comparison"
-          width={200}
-          height={200}
+          width={250}
+          height={250}
         />
       </div>
     </div>

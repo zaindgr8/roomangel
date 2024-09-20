@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import Sidebar from "../components/Sidebar";
 
 export default function Page({ onNext }) {
   const [email, setEmail] = useState("");
@@ -47,18 +46,19 @@ export default function Page({ onNext }) {
             <button type="submit" className="btn btn-primary btn-lg w-full">
               Login
             </button>
-            <div className="flex justify-center">
+
+            {/* Links positioned side by side */}
+            <div className="flex justify-between">
               <Link
                 href={""}
-                className="block text-sm font-medium underline text-green-500"
+                className="text-sm font-medium underline text-green-500"
               >
                 Forgot Password
               </Link>
-            </div>
-            <div className="flex justify-center">
+
               <Link
                 href={"/"}
-                className="block text-sm font-medium underline text-green-500"
+                className="text-sm font-medium underline text-green-500"
               >
                 About Room Angel
               </Link>
