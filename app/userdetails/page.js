@@ -25,27 +25,43 @@ export default function UserList() {
   ]);
 
   const [selectedUserId, setSelectedUserId] = useState(null);
+  const [isAddingUser, setIsAddingUser] = useState(false); // Toggle form visibility
+  const [newUser, setNewUser] = useState({
+    name: "",
+    email: "",
+    contact: "",
+  });
 
   const handleRowClick = (id) => {
     setSelectedUserId(id); // Highlight the selected row
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewUser((prevUser) => ({ ...prevUser, [name]: value }));
+  };
+
   const handleAddUser = () => {
-    const newUserId = (users.length + 1).toString().padStart(3, "0");
-    const newUser = {
-      id: newUserId,
-      name: `New User ${newUserId}`,
-      email: `newuser${newUserId}@example.com`,
-      contact: "000-000-0000",
-    };
-    setUsers([...users, newUser]); // Add the new user to the users list
+    setIsAddingUser(true); // Show the form for adding a user
+  };
+
+  const handleSaveUser = () => {
+    if (newUser.name && newUser.email && newUser.contact) {
+      const newUserId = (users.length + 1).toString().padStart(3, "0");
+      const userToAdd = { id: newUserId, ...newUser };
+      setUsers([...users, userToAdd]); // Add the new user to the list
+      setNewUser({ name: "", email: "", contact: "" }); // Clear input fields
+      setIsAddingUser(false); // Hide the form after adding
+    } else {
+      alert("All fields must be filled!");
+    }
   };
 
   return (
-    <div className="flex">
-      <Sidebar />{" "}
-      <div className="flex flex-col items-center justify-center m-8">
-        <div className="bg-white shadow-md border-[#1f5453] border-1 rounded-lg p-8 w-full max-w-4xl">
+    <div className="flex justify-center items-center min-h-screen">
+      <Sidebar />
+      <div className="flex flex-col w-full max-w-4xl m-8">
+        <div className="bg-white shadow-md border-[#1f5453] border-1 rounded-lg p-8 w-full">
           <h2 className="text-2xl font-semibold mb-6 text-center">User List</h2>
           <table className="table-auto w-full border-collapse border border-gray-300">
             <thead>
@@ -101,12 +117,64 @@ export default function UserList() {
             </div>
           )}
 
+          {/* Form for Adding New User */}
+          {isAddingUser && (
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold mb-4">Add New User</h3>
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter name"
+                  value={newUser.name}
+                  onChange={handleInputChange}
+                  className="border border-gray-300 rounded-lg p-2 w-full"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter email"
+                  value={newUser.email}
+                  onChange={handleInputChange}
+                  className="border border-gray-300 rounded-lg p-2 w-full"
+                />
+                <input
+                  type="text"
+                  name="contact"
+                  placeholder="Enter contact number"
+                  value={newUser.contact}
+                  onChange={handleInputChange}
+                  className="border border-gray-300 rounded-lg p-2 w-full"
+                />
+              </div>
+              <div className="mt-4 space-x-4">
+                <button
+                  onClick={handleSaveUser}
+                  className="btn btn-primary btn-lg"
+                >
+                  Save
+                </button>
+                <button
+                  onClick={() => setIsAddingUser(false)}
+                  className="btn btn-secondary btn-lg"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Add New User Button */}
-          <div className="mt-8 text-center">
-            <button onClick={handleAddUser} className="btn btn-primary btn-lg">
-              Add New User
-            </button>
-          </div>
+          {!isAddingUser && (
+            <div className="mt-8 text-center">
+              <button
+                onClick={handleAddUser}
+                className="btn btn-primary btn-lg"
+              >
+                Add New User
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

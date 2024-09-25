@@ -14,8 +14,8 @@ export default function MembershipRenewal() {
   return (
     <div className="flex">
       <Sidebar />{" "}
-      <div className="flex flex-col items-center justify-center  mt-7 ">
-        <div className="rounded-lg p-8 mb-6 w-full ">
+      <div className="flex flex-col      w-full  ">
+        <div className="rounded-lg p-8  w-full ">
           <table className="table-auto w-full border-collapse border border-gray-300">
             <thead>
               <tr className="bg-gray-200">
