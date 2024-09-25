@@ -66,7 +66,7 @@ export default function ReviewPage() {
     <div className="flex">
       <Sidebar /> {/* Sidebar on the left */}
       <div className="flex-grow min-h-screen p-6">
-        <div className="min-h-screen flex flex-col mt-20 mb-4 mx-2 border-[#1f5453] border-2 rounded-xl md:m-8 sm:m-2 p-2">
+        <div className="min-h-screen flex flex-col mt-20 mb-4 mx-2 rounded-xl md:m-8 sm:m-2 p-2">
           {/* Review List */}
           <div className="border-[#1f5453] p-1 border-2 rounded-lg mb-4">
             <table className="min-w-full divide-y divide-gray-200">
