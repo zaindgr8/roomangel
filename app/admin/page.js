@@ -76,22 +76,24 @@ export default function HotelForm() {
 
             <div className="flex gap-4 mb-4">
               <div className="w-1/2">
-                <label className="block font-medium mb-2">Hotel Program</label>
+                <label className="block font-medium mb-2">
+                  Hotel Brand Program
+                </label>
                 <input
                   type="text"
                   className="border border-gray-300 p-2 w-full rounded"
-                  placeholder="Enter Hotel  Program"
+                  placeholder="Enter Hotel Brand Program"
                 />
               </div>
 
               <div className="w-1/2">
                 <label className="block font-medium mb-2">
-                  Hotel Contact Email
+                  Hotel Brand Email
                 </label>
                 <input
                   type="email"
                   className="border border-gray-300 p-2 w-full rounded"
-                  placeholder="Enter Hotel  Contact Email"
+                  placeholder="Enter Hotel Brand  Email"
                 />
               </div>
             </div>
