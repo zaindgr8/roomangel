@@ -67,6 +67,95 @@ export default function ReviewPage() {
       <Sidebar /> {/* Sidebar on the left */}
       <div className="flex-grow min-h-screen p-6">
         <div className="min-h-screen flex flex-col mt-20 mb-4 mx-2 rounded-xl md:m-8 sm:m-2 p-2">
+          {/* Conditionally Render Extra Review Details on Top of Review List */}
+          {highlightedReview && (
+            <div className="border-[#1f5453] bg-[#f8f9fa] rounded-lg border-2 p-4 mb-6">
+              <div className="grid grid-cols-3 gap-2">
+                <div className="flex flex-col">
+                  <label className="mb-1">Total Reviews</label>
+                  <input
+                    type="text"
+                    value={highlightedReview.score}
+                    className="border p-2 rounded-md"
+                    readOnly
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="mb-1">Score Overall</label>
+                  <input
+                    type="text"
+                    value={highlightedReview.guestName}
+                    className="border p-2 rounded-md"
+                    readOnly
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="mb-1">Overall Summary</label>
+                  <input
+                    type="text"
+                    value={highlightedReview.dateOfStay}
+                    className="border p-2 rounded-md"
+                    readOnly
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="mb-1">Value For Money</label>
+                  <input
+                    type="text"
+                    value={highlightedReview.nights}
+                    className="border p-2 rounded-md"
+                    readOnly
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="mb-1">Staff, Cleanliness</label>
+                  <input
+                    type="text"
+                    value={highlightedReview.reservationNumber}
+                    className="border p-2 rounded-md"
+                    readOnly
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="mb-1">Comfort</label>
+                  <input
+                    type="text"
+                    value={highlightedReview.roomType}
+                    className="border p-2 rounded-md"
+                    readOnly
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="mb-1">Facilities</label>
+                  <input
+                    type="text"
+                    value={highlightedReview.roomNumber}
+                    className="border p-2 rounded-md"
+                    readOnly
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="mb-1">Location</label>
+                  <input
+                    type="text"
+                    value={highlightedReview.roomNumber}
+                    className="border p-2 rounded-md"
+                    readOnly
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="mb-1">Free WiFi</label>
+                  <input
+                    type="text"
+                    value={highlightedReview.roomNumber}
+                    className="border p-2 rounded-md"
+                    readOnly
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Review List */}
           <div className="border-[#1f5453] p-1 border-2 rounded-lg mb-4">
             <table className="min-w-full divide-y divide-gray-200">
@@ -215,92 +304,6 @@ export default function ReviewPage() {
                 >
                   Submit Reply
                 </button>
-              </div>
-              <div className="border-[#1f5453] bg-[#f8f9fa] rounded-lg border-2 p-4">
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="flex flex-col">
-                    <label className="mb-1">Total Reviews</label>
-                    <input
-                      type="text"
-                      value={highlightedReview.score}
-                      className="border p-2 rounded-md"
-                      readOnly
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="mb-1">Score Overall</label>
-                    <input
-                      type="text"
-                      value={highlightedReview.guestName}
-                      className="border p-2 rounded-md"
-                      readOnly
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="mb-1">Overall Summary</label>
-                    <input
-                      type="text"
-                      value={highlightedReview.dateOfStay}
-                      className="border p-2 rounded-md"
-                      readOnly
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="mb-1">Value For Money</label>
-                    <input
-                      type="text"
-                      value={highlightedReview.nights}
-                      className="border p-2 rounded-md"
-                      readOnly
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="mb-1">Staff, Cleanliness</label>
-                    <input
-                      type="text"
-                      value={highlightedReview.reservationNumber}
-                      className="border p-2 rounded-md"
-                      readOnly
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="mb-1">Comfort</label>
-                    <input
-                      type="text"
-                      value={highlightedReview.roomType}
-                      className="border p-2 rounded-md"
-                      readOnly
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="mb-1">Facilities</label>
-                    <input
-                      type="text"
-                      value={highlightedReview.roomNumber}
-                      className="border p-2 rounded-md"
-                      readOnly
-                    />
-                  </div>
-                  {/* Add the Rating Section Here */}
-                  <div className="flex flex-col">
-                    <label className="mb-1">Location</label>
-                    <input
-                      type="text"
-                      value={highlightedReview.roomNumber}
-                      className="border p-2 rounded-md"
-                      readOnly
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="mb-1">Free WiFi</label>
-                    <input
-                      type="text"
-                      value={highlightedReview.roomNumber}
-                      className="border p-2 rounded-md"
-                      readOnly
-                    />
-                  </div>
-                </div>
               </div>
             </div>
           )}
