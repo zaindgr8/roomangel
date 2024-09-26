@@ -43,26 +43,22 @@ export default function HotelForm() {
               </div>
 
               <div className="w-1/2">
-                <label className="block font-medium mb-2">
-                  Booking Engine Contact Email
-                </label>
+                <label className="block font-medium mb-2">Contact Email</label>
                 <input
                   type="email"
                   className="border border-gray-300 p-2 w-full rounded"
-                  placeholder="Enter Booking Engine Contact Email"
+                  placeholder="Enter  Contact Email"
                 />
               </div>
             </div>
 
             <div className="flex gap-4 mb-4">
               <div className="w-1/2">
-                <label className="block font-medium mb-2">
-                  Booking Engine Contact Phone
-                </label>
+                <label className="block font-medium mb-2">Contact Phone</label>
                 <input
                   type="text"
                   className="border border-gray-300 p-2 w-full rounded"
-                  placeholder="Enter Booking Engine Contact Phone"
+                  placeholder="Enter  Contact Phone"
                 />
               </div>
 
