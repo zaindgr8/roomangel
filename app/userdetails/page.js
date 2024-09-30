@@ -87,7 +87,7 @@ export default function UserList() {
       <Sidebar />
       <div className="flex flex-col w-full max-w-6xl m-8">
         <div className="bg-white shadow-md border-[#1f5453] border-1 rounded-lg p-8 w-full">
-          <h2 className="text-2xl font-semibold mb-6 text-center">User List</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">Users</h2>
           <div className="overflow-x-auto">
             <table className="table-auto w-full border-collapse border border-gray-300">
               <thead>
@@ -153,6 +153,9 @@ export default function UserList() {
                 </button>
                 <button className="btn mt-2 btn-primary btn-lg md:w-100">
                   Delete
+                </button>
+                <button className="btn mt-2 btn-primary btn-lg md:w-100">
+                  Cancel
                 </button>
               </div>
             </div>
