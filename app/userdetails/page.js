@@ -58,7 +58,7 @@ export default function UserList() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex ">
       <Sidebar />
       <div className="flex flex-col w-full max-w-4xl m-8">
         <div className="bg-white shadow-md border-[#1f5453] border-1 rounded-lg p-8 w-full">
