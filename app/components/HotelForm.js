@@ -180,40 +180,6 @@ export default function FormComponent({ onNext }) {
                 className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">
-                Room Per Day Rate Information
-              </label>
-              <input
-                type="text"
-                name="roomDayRateInformation"
-                value={formData.roomDayRateInformation}
-                onChange={handleInputChange}
-                className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Room Information</label>
-              <input
-                type="text"
-                name="roomInformation"
-                value={formData.roomInformation}
-                onChange={handleInputChange}
-                className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">
-                Room Rate Information
-              </label>
-              <input
-                type="text"
-                name="roomRateInformation"
-                value={formData.roomRateInformation}
-                onChange={handleInputChange}
-                className="mt-1 p-2 w-full border rounded-md hover:border-[#1f5453]"
-              />
-            </div>
           </form>
         </div>
 
