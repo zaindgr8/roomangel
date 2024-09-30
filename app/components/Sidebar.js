@@ -11,6 +11,11 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
+            <Link href="/userdetails" className="block py-2 px-4  rounded-md">
+              Admin
+            </Link>
+          </li>
+          <li>
             <Link href="/hotel-form" className="block py-2 px-4  rounded-md">
               Hotel Details
             </Link>
@@ -43,11 +48,6 @@ const Sidebar = () => {
           <li>
             <Link href="/" className="block py-2 px-4  rounded-md">
               About Room Angel
-            </Link>
-          </li>
-          <li>
-            <Link href="/userdetails" className="block py-2 px-4  rounded-md">
-              Admin
             </Link>
           </li>
         </ul>
