@@ -16,6 +16,15 @@ const initialReviewsData = [
     roomNumber: "101",
     description: "Amazing experience, will come again!",
     text: "The staff was very friendly, and the room was spacious and clean. Highly recommend this place!",
+    totalReviews: 4379,
+    overallHotelScore: 9.0,
+    overallSummary: "Excellent",
+    valueForMoney: 8.5,
+    staff: 9.0,
+    cleanliness: 9.0,
+    comfort: 9.5,
+    facilities: 9.5,
+    location: 8.5,
   },
   {
     id: 2,
@@ -28,6 +37,15 @@ const initialReviewsData = [
     roomNumber: "202",
     description: "Good stay, but could improve cleanliness.",
     text: "The hotel was in a great location, but the room wasn't cleaned properly. Other than that, the stay was comfortable.",
+    totalReviews: 3127,
+    overallHotelScore: 8.7,
+    overallSummary: "Very Good",
+    valueForMoney: 8.0,
+    staff: 8.5,
+    cleanliness: 8.7,
+    comfort: 9.0,
+    facilities: 8.8,
+    location: 8.2,
   },
   {
     id: 3,
@@ -40,6 +58,15 @@ const initialReviewsData = [
     roomNumber: "303",
     description: "Fantastic stay, exceeded expectations!",
     text: "Everything was perfect, from check-in to the amenities. Highly recommend the deluxe room for an amazing experience.",
+    totalReviews: 5264,
+    overallHotelScore: 9.2,
+    overallSummary: "Outstanding",
+    valueForMoney: 9.0,
+    staff: 9.3,
+    cleanliness: 9.5,
+    comfort: 9.8,
+    facilities: 9.4,
+    location: 9.0,
   },
 ];
 
@@ -57,7 +84,6 @@ export default function ReviewPage() {
   const [reviewsData, setReviewsData] = useState(initialReviewsData);
   const [highlightedReview, setHighlightedReview] = useState(null);
 
-  // Handle review click
   const handleClick = (review) => {
     setHighlightedReview(review);
   };
@@ -67,33 +93,43 @@ export default function ReviewPage() {
       <Sidebar /> {/* Sidebar on the left */}
       <div className="flex-grow min-h-screen p-6">
         <div className="min-h-screen flex flex-col mt-20 mb-4 mx-2 rounded-xl md:m-8 sm:m-2 p-2">
-          {/* Conditionally Render Extra Review Details on Top of Review List */}
-          {highlightedReview && (
+          {/* Always Visible Section for Summary Details */}
+          <div className="">
             <div className="border-[#1f5453] bg-[#f8f9fa] rounded-lg border-2 p-4 mb-6">
               <div className="grid grid-cols-3 gap-2">
                 <div className="flex flex-col">
                   <label className="mb-1">Total Reviews</label>
                   <input
                     type="text"
-                    value={highlightedReview.score}
+                    value={
+                      highlightedReview ? highlightedReview.totalReviews : "N/A"
+                    }
                     className="border p-2 rounded-md"
                     readOnly
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label className="mb-1">Score Overall</label>
+                  <label className="mb-1">Overall hotel Score</label>
                   <input
                     type="text"
-                    value={highlightedReview.guestName}
+                    value={
+                      highlightedReview
+                        ? highlightedReview.overallHotelScore
+                        : "N/A"
+                    }
                     className="border p-2 rounded-md"
                     readOnly
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label className="mb-1">Overall Summary</label>
+                  <label className="mb-1">Overall Rating</label>
                   <input
                     type="text"
-                    value={highlightedReview.dateOfStay}
+                    value={
+                      highlightedReview
+                        ? highlightedReview.overallSummary
+                        : "N/A"
+                    }
                     className="border p-2 rounded-md"
                     readOnly
                   />
@@ -102,16 +138,31 @@ export default function ReviewPage() {
                   <label className="mb-1">Value For Money</label>
                   <input
                     type="text"
-                    value={highlightedReview.nights}
+                    value={
+                      highlightedReview
+                        ? highlightedReview.valueForMoney
+                        : "N/A"
+                    }
                     className="border p-2 rounded-md"
                     readOnly
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label className="mb-1">Staff, Cleanliness</label>
+                  <label className="mb-1">Staff </label>
                   <input
                     type="text"
-                    value={highlightedReview.reservationNumber}
+                    value={highlightedReview ? highlightedReview.staff : "N/A"}
+                    className="border p-2 rounded-md"
+                    readOnly
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="mb-1"> Cleanliness</label>
+                  <input
+                    type="text"
+                    value={
+                      highlightedReview ? highlightedReview.cleanliness : "N/A"
+                    }
                     className="border p-2 rounded-md"
                     readOnly
                   />
@@ -120,7 +171,9 @@ export default function ReviewPage() {
                   <label className="mb-1">Comfort</label>
                   <input
                     type="text"
-                    value={highlightedReview.roomType}
+                    value={
+                      highlightedReview ? highlightedReview.comfort : "N/A"
+                    }
                     className="border p-2 rounded-md"
                     readOnly
                   />
@@ -129,7 +182,9 @@ export default function ReviewPage() {
                   <label className="mb-1">Facilities</label>
                   <input
                     type="text"
-                    value={highlightedReview.roomNumber}
+                    value={
+                      highlightedReview ? highlightedReview.facilities : "N/A"
+                    }
                     className="border p-2 rounded-md"
                     readOnly
                   />
@@ -138,24 +193,16 @@ export default function ReviewPage() {
                   <label className="mb-1">Location</label>
                   <input
                     type="text"
-                    value={highlightedReview.roomNumber}
-                    className="border p-2 rounded-md"
-                    readOnly
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label className="mb-1">Free WiFi</label>
-                  <input
-                    type="text"
-                    value={highlightedReview.roomNumber}
+                    value={
+                      highlightedReview ? highlightedReview.location : "N/A"
+                    }
                     className="border p-2 rounded-md"
                     readOnly
                   />
                 </div>
               </div>
             </div>
-          )}
-
+          </div>
           {/* Review List */}
           <div className="border-[#1f5453] p-1 border-2 rounded-lg mb-4">
             <table className="min-w-full divide-y divide-gray-200">
