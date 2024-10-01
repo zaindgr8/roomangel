@@ -102,7 +102,7 @@ export default function ReviewPage() {
                   <input
                     type="text"
                     value={
-                      highlightedReview ? highlightedReview.totalReviews : "N/A"
+                      highlightedReview ? highlightedReview.totalReviews : ""
                     }
                     className="border p-2 rounded-md"
                     readOnly
@@ -115,7 +115,7 @@ export default function ReviewPage() {
                     value={
                       highlightedReview
                         ? highlightedReview.overallHotelScore
-                        : "N/A"
+                        : ""
                     }
                     className="border p-2 rounded-md"
                     readOnly
@@ -126,9 +126,7 @@ export default function ReviewPage() {
                   <input
                     type="text"
                     value={
-                      highlightedReview
-                        ? highlightedReview.overallSummary
-                        : "N/A"
+                      highlightedReview ? highlightedReview.overallSummary : ""
                     }
                     className="border p-2 rounded-md"
                     readOnly
@@ -139,9 +137,7 @@ export default function ReviewPage() {
                   <input
                     type="text"
                     value={
-                      highlightedReview
-                        ? highlightedReview.valueForMoney
-                        : "N/A"
+                      highlightedReview ? highlightedReview.valueForMoney : ""
                     }
                     className="border p-2 rounded-md"
                     readOnly
@@ -151,7 +147,7 @@ export default function ReviewPage() {
                   <label className="mb-1">Staff </label>
                   <input
                     type="text"
-                    value={highlightedReview ? highlightedReview.staff : "N/A"}
+                    value={highlightedReview ? highlightedReview.staff : ""}
                     className="border p-2 rounded-md"
                     readOnly
                   />
@@ -161,7 +157,7 @@ export default function ReviewPage() {
                   <input
                     type="text"
                     value={
-                      highlightedReview ? highlightedReview.cleanliness : "N/A"
+                      highlightedReview ? highlightedReview.cleanliness : ""
                     }
                     className="border p-2 rounded-md"
                     readOnly
@@ -171,9 +167,7 @@ export default function ReviewPage() {
                   <label className="mb-1">Comfort</label>
                   <input
                     type="text"
-                    value={
-                      highlightedReview ? highlightedReview.comfort : "N/A"
-                    }
+                    value={highlightedReview ? highlightedReview.comfort : ""}
                     className="border p-2 rounded-md"
                     readOnly
                   />
@@ -183,7 +177,7 @@ export default function ReviewPage() {
                   <input
                     type="text"
                     value={
-                      highlightedReview ? highlightedReview.facilities : "N/A"
+                      highlightedReview ? highlightedReview.facilities : ""
                     }
                     className="border p-2 rounded-md"
                     readOnly
@@ -193,9 +187,7 @@ export default function ReviewPage() {
                   <label className="mb-1">Location</label>
                   <input
                     type="text"
-                    value={
-                      highlightedReview ? highlightedReview.location : "N/A"
-                    }
+                    value={highlightedReview ? highlightedReview.location : ""}
                     className="border p-2 rounded-md"
                     readOnly
                   />

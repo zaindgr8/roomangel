@@ -20,6 +20,16 @@ export default function FormComponent({ onNext }) {
     roomDayRateInformation: "$150 per room per day",
     roomInformation: "Deluxe Suite, 2 beds",
     roomRateInformation: "$170 per night",
+    roomAmenities: {
+      freeWifi: false,
+      airConditioning: false,
+      miniBar: false,
+      coffeeTea: false,
+      bathrobe: false,
+      flatScreenTV: false,
+      privateBathroom: false,
+      safe: false,
+    },
   });
 
   // Handling form input changes
@@ -30,7 +40,16 @@ export default function FormComponent({ onNext }) {
       [name]: value,
     });
   };
-
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      roomAmenities: {
+        ...prevState.roomAmenities,
+        [name]: checked,
+      },
+    }));
+  };
   return (
     <div className="bg-white rounded-lg shadow-md m-4 border-[#1f5453] border-2">
       <div className=" p-2 justify-between gap-4 flex ">
@@ -204,8 +223,97 @@ export default function FormComponent({ onNext }) {
 
         {/* Amenities Section */}
         <div className="p-3 bg-white rounded-lg shadow-md w-full">
-          <h2 className="text-xl font-semibold mb-4">Amenities</h2>
-          <form>{/* Amenities form fields can go here */}</form>
+          <h2 className="text-xl font-semibold mb-4">Room Amenities</h2>
+          <form>
+            <div className="mb-2">
+              <label className="block">
+                <input
+                  type="checkbox"
+                  name="freeWifi"
+                  checked={formData.roomAmenities.freeWifi}
+                  onChange={handleCheckboxChange}
+                />{" "}
+                Free Wifi
+              </label>
+            </div>
+            <div className="mb-2">
+              <label className="block">
+                <input
+                  type="checkbox"
+                  name="airConditioning"
+                  checked={formData.roomAmenities.airConditioning}
+                  onChange={handleCheckboxChange}
+                />{" "}
+                Air Conditioning
+              </label>
+            </div>
+            <div className="mb-2">
+              <label className="block">
+                <input
+                  type="checkbox"
+                  name="miniBar"
+                  checked={formData.roomAmenities.miniBar}
+                  onChange={handleCheckboxChange}
+                />{" "}
+                Mini Bar
+              </label>
+            </div>
+            <div className="mb-2">
+              <label className="block">
+                <input
+                  type="checkbox"
+                  name="coffeeTea"
+                  checked={formData.roomAmenities.coffeeTea}
+                  onChange={handleCheckboxChange}
+                />{" "}
+                Coffee/Tea
+              </label>
+            </div>
+            <div className="mb-2">
+              <label className="block">
+                <input
+                  type="checkbox"
+                  name="bathrobe"
+                  checked={formData.roomAmenities.bathrobe}
+                  onChange={handleCheckboxChange}
+                />{" "}
+                Bathrobe
+              </label>
+            </div>
+            <div className="mb-2">
+              <label className="block">
+                <input
+                  type="checkbox"
+                  name="flatScreenTV"
+                  checked={formData.roomAmenities.flatScreenTV}
+                  onChange={handleCheckboxChange}
+                />{" "}
+                Flat Screen TV
+              </label>
+            </div>
+            <div className="mb-2">
+              <label className="block">
+                <input
+                  type="checkbox"
+                  name="privateBathroom"
+                  checked={formData.roomAmenities.privateBathroom}
+                  onChange={handleCheckboxChange}
+                />{" "}
+                Private Bathroom
+              </label>
+            </div>
+            <div className="mb-2">
+              <label className="block">
+                <input
+                  type="checkbox"
+                  name="safe"
+                  checked={formData.roomAmenities.safe}
+                  onChange={handleCheckboxChange}
+                />{" "}
+                Safe
+              </label>
+            </div>
+          </form>
         </div>
       </div>
 

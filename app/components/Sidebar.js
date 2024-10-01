@@ -3,8 +3,8 @@ import Link from "next/link";
 const Sidebar = () => {
   return (
     <div className="h-screen bg-[#1f5453]  text-white w-64 flex flex-col">
-      <nav className="mt-16">
-        <ul className="space-y-4">
+      <nav className=" mt-2">
+        <ul className="space-y-3">
           <li>
             <Link href="/" className="block py-2 px-4  rounded-md">
               Choose Hotel
