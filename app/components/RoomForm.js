@@ -215,12 +215,6 @@ export default function FormComponent({ onNext }) {
           </form>
         </div>
 
-        {/* Facilities Section */}
-        <div className="p-3 bg-white rounded-lg shadow-md w-full">
-          <h2 className="text-xl font-semibold mb-4">Facilities</h2>
-          <form>{/* Facilities form fields can go here */}</form>
-        </div>
-
         {/* Amenities Section */}
         <div className="p-3 bg-white rounded-lg shadow-md w-full">
           <h2 className="text-xl font-semibold mb-4">Room Amenities</h2>
