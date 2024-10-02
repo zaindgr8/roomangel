@@ -82,7 +82,10 @@ const renderStars = (rating) => {
 
 export default function ReviewPage() {
   const [reviewsData, setReviewsData] = useState(initialReviewsData);
-  const [highlightedReview, setHighlightedReview] = useState(null);
+  // Set the first review as the default highlighted review
+  const [highlightedReview, setHighlightedReview] = useState(
+    initialReviewsData[0]
+  );
 
   const handleClick = (review) => {
     setHighlightedReview(review);
@@ -327,21 +330,16 @@ export default function ReviewPage() {
                 </div>
               </div>
 
-              {/* Reply Section */}
-              <div className="p-2 border-[#1f5453] rounded-lg border-2 md:p-4">
-                <h3 className="p-2 md:font-semibold">
-                  Reply to Highlighted Review
-                </h3>
+              {/* Hotel's response */}
+              <div className="border-[#1f5453] bg-[#f8f9fa] rounded-lg border-2 p-4">
+                <h2 className="text-lg font-bold mb-2">Hotel's Response</h2>
                 <textarea
-                  className="w-full border rounded-md p-2"
-                  rows="4"
-                  placeholder="Write your reply..."
-                ></textarea>
-                <button
-                  type="submit"
-                  className="btn mt-2 btn-primary btn-lg md:w-100"
-                >
-                  Submit Reply
+                  rows="6"
+                  className="w-full p-2 border rounded-md"
+                  placeholder="Write your response here..."
+                />
+                <button className="bg-[#1f5453] text-white px-4 py-2 rounded mt-2">
+                  Submit Response
                 </button>
               </div>
             </div>
