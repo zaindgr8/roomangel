@@ -274,7 +274,7 @@ export default function ReviewPage() {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <label className="mb-1"># of Nights</label>
+                    <label className="mb-1"> of Nights</label>
                     <input
                       type="text"
                       value={highlightedReview.nights}
@@ -283,7 +283,7 @@ export default function ReviewPage() {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <label className="mb-1">Reservation #</label>
+                    <label className="mb-1">Reservation </label>
                     <input
                       type="text"
                       value={highlightedReview.reservationNumber}
@@ -301,7 +301,7 @@ export default function ReviewPage() {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <label className="mb-1">Room #</label>
+                    <label className="mb-1">Room </label>
                     <input
                       type="text"
                       value={highlightedReview.roomNumber}
