@@ -41,7 +41,7 @@ export default function RegistrationFlow() {
   };
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex m-4">
       <div className="flex-grow flex items-center justify-center ">
         <div className="bg-white p-8 shadow-lg rounded-lg w-full max-w-md">
           {renderStep()}

@@ -6,7 +6,7 @@ const Sidebar = () => {
       <nav className=" mt-2">
         <ul className="space-y-3">
           <li>
-            <Link href="/" className="block py-2 px-4  rounded-md">
+            <Link href="/plain" className="block py-2 px-4  rounded-md">
               Choose Hotel
             </Link>
           </li>
